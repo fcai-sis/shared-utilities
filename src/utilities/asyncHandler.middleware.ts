@@ -16,10 +16,12 @@ type ExtendedRequest<
  * @param fn An async express route handler or middleware
  * @returns A new async express route handler or middleware that catches any errors thrown by the original handler/middleware
  */
-export default function asyncHandler<T>(
+function asyncHandler<T>(
   fn: (req: ExtendedRequest<T>, res: Response, next: NextFunction) => Promise<any>
 ) {
   return (req: ExtendedRequest<T>, res: Response, next: NextFunction) => {
     return Promise.resolve(fn(req, res, next)).catch(next);
   };
 }
+
+export { asyncHandler };
