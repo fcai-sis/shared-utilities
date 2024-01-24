@@ -1,5 +1,5 @@
 {
-  "name": "shared-utilities",
+  "name": "@fcai-sis/shared-utilities",
   "version": "0.0.1",
   "description": "All shared utility functions and structures",
   "main": "./dist/index.js",
