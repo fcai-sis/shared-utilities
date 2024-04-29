@@ -3,11 +3,18 @@
  * @param {string} message - Error message
  */
 export class ForeignKeyNotFound extends Error {
-  private readonly code: string;
+  private readonly _code: string;
 
   constructor(message: string) {
     super(message);
     this.name = this.constructor.name;
-    this.code = "foreign-key-not-found";
+    this._code = "foreign-key-not-found";
+  }
+
+  /**
+   * Getter for the error code
+   */
+  get code(): string {
+    return this._code;
   }
 }
